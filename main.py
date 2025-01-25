@@ -1,6 +1,16 @@
-import colorama
+class IterableGenerator:
+    def __init__(self, start, end):
+        self.start = start
+        self.end = end
 
-for metod in dir(colorama):
-    print(metod)
+    def __iter__(self):
 
-#colorama-призначене для змінювання тексту та фону робити його жирним,курсивним та підкресленим
+        return (x for x in range(self.start, self.end + 1))
+
+iterable_object = IterableGenerator(1, 5)
+
+for value in iterable_object:
+    print(value)
+
+
+
